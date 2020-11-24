@@ -20,11 +20,12 @@ class CheckSession
         $yesterday = Carbon::yesterday();
         $userDate = \Auth::user()->last_login_at;
 
-        // Si la ultima sesion fue hace mas de 1 dia, redirigir a pagina /sesiones
+        // if last session was a day ago, redirect to /sesiones
         if( $yesterday->diffInHours($userDate) >= 24 ){
             return redirect('/sessions');
         }
 
-        return $next($request);
+        //return $next($request);
+        return route('home');
     }
 }
