@@ -34,7 +34,7 @@ Route::get('/sessions', [App\Http\Controllers\HomeController::class, 'getSession
  * Admin Routes
  */
 
-Route::group(['prefix' => 'admin', 'middleware' => ['auth','check.session']], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
     // Eliminar usuarios - softdelete
     Route::get('users/delete/{id}', [App\Http\Controllers\UsersController::class, 'destroy'])->name('admin.users.delete');
