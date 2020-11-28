@@ -25,7 +25,7 @@ class CheckSession
             return redirect('/sessions');
         }
 
-        //return $next($request);
-        return route('home');
+        return $next($request);
+        //return route('home');
     }
 }
